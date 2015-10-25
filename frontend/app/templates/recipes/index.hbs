@@ -1,1 +1,7 @@
-{{outlet}}
+<ul>
+	{{#each model as |recipe|}}
+		<li>
+			{{recipe.name}}
+		</li>
+	{{/each}}
+</ul>
