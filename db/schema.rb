@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20151025193338) do
 
   add_index "ingredients", ["recipe_id"], name: "index_ingredients_on_recipe_id", using: :btree
 
-  create_table "ingredients_recipes", id: false, force: :cascade do |t|
+  create_table "ingredients_recipes", id: sefalse, force: :cascade do |t|
     t.integer "ingredient_id"
     t.integer "recipe_id"
   end
