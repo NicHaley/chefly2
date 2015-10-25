@@ -22,5 +22,6 @@ group :development, :test do
 	gem 'pry-doc'
 	gem 'quiet_assets'
 	gem 'awesome_print'
+	gem 'faker'
 	
 end
