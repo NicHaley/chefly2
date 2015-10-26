@@ -1,0 +1,11 @@
+<ul>
+	{{#each model as |recipe|}}
+		<li>
+			<h4>{{recipe.name}}</h4>
+			<p>Cook Time: {{recipe.cookTime}}</p>
+			<p>Yield: {{recipe.yield}}</p>
+			{{recipe.ingredientLines}}
+		</li>
+		<hr>
+	{{/each}}
+</ul>
