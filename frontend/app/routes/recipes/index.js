@@ -9,6 +9,10 @@ export default Ember.Route.extend({
 	actions: {
 		getMoreRecipes() {
 			console.log("yolo this was hit");
+			Ember.$.get('/get_more_recipes', {})
+        .then(function(json) {
+          console.log(json);
+        });
 		}
 	}
 
