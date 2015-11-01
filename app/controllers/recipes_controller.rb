@@ -6,6 +6,12 @@ class RecipesController < ApplicationController
     render json: @recipes
   end
 
+  def get_more_recipes
+  	@more_recipes = Recipe.all
+
+    render json: @more_recipes
+  end
+
   def show
   	 @recipe = Recipe.find(params[:id])
 
