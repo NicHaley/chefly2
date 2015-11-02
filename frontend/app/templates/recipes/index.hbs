@@ -1,7 +1,9 @@
 <ul>
 	{{#each model as |recipe|}}
 		<li>
-			<h4>{{recipe.name}}</h4>
+			{{#link-to "recipes.recipe" recipe.id}}
+				<h4>{{recipe.name}}</h4>
+			{{/link-to}}
 			<p>Cook Time: {{recipe.cookTime}}</p>
 			<p>Yield: {{recipe.yield}}</p>
 			{{recipe.ingredientLines}}
