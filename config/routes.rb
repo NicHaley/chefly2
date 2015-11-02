@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'blogs/index'
-
-  get 'blogs/show'
-
   resources :recipes, only: [:index, :show]
+  resources :blogs, only: [:index, :show]
 
   get '/get_more_recipes', to: 'recipes#get_more_recipes'
 

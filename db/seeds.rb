@@ -15,3 +15,10 @@
     yield: "#{rand(6)} servings"
   )
 end
+
+
+10.times do
+  Blog.create(
+    name: Faker::Lorem.words.join(' ')
+  )
+end
