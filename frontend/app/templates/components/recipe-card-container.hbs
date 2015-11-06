@@ -1,1 +1,7 @@
-{{yield}}
+<ul>
+	{{#each recipes as |recipe|}}
+		{{recipe-card recipe=recipe}}
+	{{/each}}
+</ul>
+
+<button {{action "getMoreRecipes"}}>Get More</button>
