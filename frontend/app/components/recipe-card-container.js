@@ -10,7 +10,6 @@ export default Ember.Component.extend({
 	recipes: null,
 	currentRecipe: 0,
 
-
 	/**
 	* Methods
 	*/
