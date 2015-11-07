@@ -9,15 +9,16 @@ export default Ember.Component.extend({
 	*/
 	recipes: null,
 	currentRecipe: 0,
+	recipesLength: Em.computed.reads("recipes.length"),
 
 	/**
 	* Methods
 	*/
 	incrementIndex: function () {
 		let currentRecipe = this.get("currentRecipe"),
-				recipesIndex = this.get("recipes.length") - 1;
+				lastRecipe = this.get("recipesLength") - 1;
 
-		if (currentRecipe !== recipesIndex) {
+		if (currentRecipe !== lastRecipe) {
 			this.set("currentRecipe", currentRecipe + 1);
 		} else {
 			this.set("currentRecipe", 0);
@@ -26,12 +27,12 @@ export default Ember.Component.extend({
 
 	decrementIndex: function () {
 		let currentRecipe = this.get("currentRecipe"),
-				recipesIndex = this.get("recipes.length") - 1;
+				lastRecipe = this.get("recipesLength") - 1;
 
 		if (currentRecipe !== 0) {
 			this.set("currentRecipe", currentRecipe - 1);
 		} else {
-			this.set("currentRecipe", recipesIndex);
+			this.set("currentRecipe", lastRecipe);
 		}
 	},
 

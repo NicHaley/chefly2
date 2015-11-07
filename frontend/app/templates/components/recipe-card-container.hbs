@@ -3,12 +3,10 @@
 		recipe=recipe
 		index=index
 		currentRecipe=currentRecipe
+		class=(if (eq currentRecipe index) "m-active")
 	}}
 
 {{/each}}
-
-
-{{#if (eq currentRecipe 0)}} hello {{/if}}
 
 
 {{!-- <button {{action "getMoreRecipes"}}>Get More</button> --}}
