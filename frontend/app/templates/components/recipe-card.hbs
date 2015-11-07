@@ -1,4 +1,4 @@
-{{#if flipped}}
+{{#unless flipped}}
 	<h2>{{recipe.name}}</h2>
 {{else}}
 
@@ -9,7 +9,7 @@
 	<p>Cook Time: {{recipe.cookTime}}</p>
 	<p>Yield: {{recipe.yield}}</p>
 	{{recipe.ingredientLines}}
-	
-{{/if}}
+
+{{/unless}}
 
 
