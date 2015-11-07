@@ -7,16 +7,34 @@ export default Ember.Component.extend({
 	* Properties
 	*/
 	recipes: null,
-
-	currentRecipe: function () {
-
-		return this.get("recipes").get("firstObject");
-	}.property("recipes.[]"),
+	currentRecipe: 0,
 
 
 	/**
 	* Methods
 	*/
+	incrementIndex: function () {
+		let currentRecipe = this.get("currentRecipe"),
+				recipesIndex = this.get("recipes.length") - 1;
+
+		if (currentRecipe !== recipesIndex) {
+			this.set("currentRecipe", currentRecipe + 1);
+		} else {
+			this.set("currentRecipe", 0);
+		}
+	},
+
+	decrementIndex: function () {
+		let currentRecipe = this.get("currentRecipe"),
+				recipesIndex = this.get("recipes.length") - 1;
+
+		if (currentRecipe !== 0) {
+			this.set("currentRecipe", currentRecipe - 1);
+		} else {
+			this.set("currentRecipe", recipesIndex);
+		}
+	},
+
 
 	/**
 	* Focus element on insert so that keyDown is triggered
@@ -32,9 +50,11 @@ export default Ember.Component.extend({
 	*/
 	keyDown: function (e) {
 		if (e.keyCode === 37) {
-			console.log("left arrow");
+			this.decrementIndex();
+			console.log(this.get("currentRecipe"));
 		} else if (e.keyCode === 39) {
-			console.log("right arrow");
+			this.incrementIndex();
+			console.log(this.get("currentRecipe"));
 		}
 	}
 
