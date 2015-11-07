@@ -1,8 +1,6 @@
 {{#each recipes as |recipe index|}}
 	{{recipe-card 
 		recipe=recipe
-		index=index
-		currentRecipe=currentRecipe
 		flipped=flipped
 		class=(if (eq currentRecipe index) "m-active")
 	}}
