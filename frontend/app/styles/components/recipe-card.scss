@@ -1,8 +1,9 @@
 .recipe-card {
 	height: 400px;
 	width: 600px;
+	display: none;
 
 	&.m-active {
-		background-color: red;
+		display: inline-block;
 	}
 }
