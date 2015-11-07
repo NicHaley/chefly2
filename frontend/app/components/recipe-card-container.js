@@ -11,13 +11,31 @@ export default Ember.Component.extend({
 	currentRecipe: function () {
 
 		return this.get("recipes").get("firstObject");
-	}.property("recipes.[]")
+	}.property("recipes.[]"),
 
 
 	/**
 	* Methods
 	*/
 
+	/**
+	* Focus element on insert so that keyDown is triggered
+	*/
+	didInsertElement(){
+	   this.$().attr('tabindex',0);
+	   this.$().focus();
+	},
 
+
+	/**
+	* 
+	*/
+	keyDown: function (e) {
+		if (e.keyCode === 37) {
+			console.log("left arrow");
+		} else if (e.keyCode === 39) {
+			console.log("right arrow");
+		}
+	}
 
 });
