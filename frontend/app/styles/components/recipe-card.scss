@@ -1,0 +1,10 @@
+.recipe-card {
+	height: 400px;
+	width: 600px;
+	display: none;
+	border: 1px solid $black;
+
+	&.m-active {
+		display: inline-block;
+	}
+}

@@ -5,5 +5,5 @@ export default DS.Model.extend({
   cookTime: DS.attr('string'),
   yield: DS.attr('string'),
   servings: DS.attr('string'),
-  ingredientLines: DS.attr('string')
+  ingredientLines: DS.attr('string'),
 });
