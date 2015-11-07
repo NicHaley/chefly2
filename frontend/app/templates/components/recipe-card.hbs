@@ -1,9 +1,7 @@
-<li>
-	{{#link-to "recipes.recipe" recipe.id}}
+{{#link-to "recipes.recipe" recipe.id}}
 	<h4>{{recipe.name}}</h4>
-	{{/link-to}}
-	<p>Cook Time: {{recipe.cookTime}}</p>
-	<p>Yield: {{recipe.yield}}</p>
-	{{recipe.ingredientLines}}
-</li>
-<hr>
+{{/link-to}}
+
+<p>Cook Time: {{recipe.cookTime}}</p>
+<p>Yield: {{recipe.yield}}</p>
+{{recipe.ingredientLines}}

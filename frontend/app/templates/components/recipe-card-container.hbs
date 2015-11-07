@@ -1,7 +1,5 @@
-<ul>
-	{{#each recipes as |recipe|}}
-		{{recipe-card recipe=recipe}}
-	{{/each}}
-</ul>
+{{#each recipes as |recipe|}}
+	{{recipe-card recipe=recipe}}
+{{/each}}
 
 <button {{action "getMoreRecipes"}}>Get More</button>
