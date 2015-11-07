@@ -9,16 +9,17 @@ export default Ember.Component.extend({
 	*/
 	recipes: null,
 	currentRecipe: 0,
-
+	recipesLength: Em.computed.reads("recipes.length"),
+	flipped: false,
 
 	/**
 	* Methods
 	*/
 	incrementIndex: function () {
 		let currentRecipe = this.get("currentRecipe"),
-				recipesIndex = this.get("recipes.length") - 1;
+				lastRecipe = this.get("recipesLength") - 1;
 
-		if (currentRecipe !== recipesIndex) {
+		if (currentRecipe !== lastRecipe) {
 			this.set("currentRecipe", currentRecipe + 1);
 		} else {
 			this.set("currentRecipe", 0);
@@ -27,12 +28,12 @@ export default Ember.Component.extend({
 
 	decrementIndex: function () {
 		let currentRecipe = this.get("currentRecipe"),
-				recipesIndex = this.get("recipes.length") - 1;
+				lastRecipe = this.get("recipesLength") - 1;
 
 		if (currentRecipe !== 0) {
 			this.set("currentRecipe", currentRecipe - 1);
 		} else {
-			this.set("currentRecipe", recipesIndex);
+			this.set("currentRecipe", lastRecipe);
 		}
 	},
 
@@ -50,10 +51,19 @@ export default Ember.Component.extend({
 	* 
 	*/
 	keyDown: function (e) {
-		if (e.keyCode === 37) {
+		// Navigate down recipe stack
+		if (e.keyCode === 40) {
 			this.decrementIndex();
-		} else if (e.keyCode === 39) {
+			this.set("flipped", false);		
+
+		// See more card info
+		} else if (e.keyCode === 39 || e.keyCode === 37) {
+			this.toggleProperty("flipped");
+
+		// Navigate up recipe stack
+		} else if (e.keyCode === 38) {
 			this.incrementIndex();
+			this.set("flipped", false);
 		}
 	}
 
