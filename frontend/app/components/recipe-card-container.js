@@ -10,6 +10,7 @@ export default Ember.Component.extend({
 	recipes: null,
 	currentRecipe: 0,
 	recipesLength: Em.computed.reads("recipes.length"),
+	flipped: false,
 
 	/**
 	* Methods
@@ -50,10 +51,19 @@ export default Ember.Component.extend({
 	* 
 	*/
 	keyDown: function (e) {
+		// Navigate left
 		if (e.keyCode === 37) {
 			this.decrementIndex();
+			this.set("flipped", false);		
+
+		// See more card info
+		} else if (e.keyCode === 38) {
+			this.toggleProperty("flipped");
+
+		// Navigate right
 		} else if (e.keyCode === 39) {
 			this.incrementIndex();
+			this.set("flipped", false);
 		}
 	}
 

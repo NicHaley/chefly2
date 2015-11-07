@@ -1,7 +1,15 @@
-{{#link-to "recipes.recipe" recipe.id}}
-	<h4>{{recipe.name}}</h4>
-{{/link-to}}
+{{#if flipped}}
+	<h2>{{recipe.name}}</h2>
+{{else}}
 
-<p>Cook Time: {{recipe.cookTime}}</p>
-<p>Yield: {{recipe.yield}}</p>
-{{recipe.ingredientLines}}
+	{{#link-to "recipes.recipe" recipe.id}}
+		<h4>{{recipe.name}}</h4>
+	{{/link-to}}
+
+	<p>Cook Time: {{recipe.cookTime}}</p>
+	<p>Yield: {{recipe.yield}}</p>
+	{{recipe.ingredientLines}}
+	
+{{/if}}
+
+
