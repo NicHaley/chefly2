@@ -51,10 +51,8 @@ export default Ember.Component.extend({
 	keyDown: function (e) {
 		if (e.keyCode === 37) {
 			this.decrementIndex();
-			console.log(this.get("currentRecipe"));
 		} else if (e.keyCode === 39) {
 			this.incrementIndex();
-			console.log(this.get("currentRecipe"));
 		}
 	}
 

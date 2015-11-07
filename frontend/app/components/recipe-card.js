@@ -9,21 +9,21 @@ export default Ember.Component.extend({
 	* Properties
 	*/
 	recipe: null,
+	currentRecipe: null,
+	index: null,
 
 	isActive: function () {
 
-		let recipe = this.get("recipe");
+		let currentRecipe = this.get("currentRecipe"),
+				index = this.get("index");
 
-		// let recipeId = this.get("recipe.id"),
-		// 		currentRecipeId = this.get("currentRecipe.id");
+		if (index === currentRecipe) {
+			return true;
+		} else {
+			return false;
+		}
 
-		// if (recipeId === currentRecipeId) {
-		// 	return true;
-		// } else {
-		// 	return false;
-		// }
-
-	}.property("recipe")
+	}.property("currentRecipe")
 	
 
 });

@@ -1,6 +1,8 @@
-{{#each recipes as |recipe|}}
+{{#each recipes as |recipe index|}}
 	{{recipe-card 
 		recipe=recipe
+		index=index
+		currentRecipe=currentRecipe
 	}}
 {{/each}}
 
