@@ -51,17 +51,17 @@ export default Ember.Component.extend({
 	* 
 	*/
 	keyDown: function (e) {
-		// Navigate left
-		if (e.keyCode === 37) {
+		// Navigate down recipe stack
+		if (e.keyCode === 40) {
 			this.decrementIndex();
 			this.set("flipped", false);		
 
 		// See more card info
-		} else if (e.keyCode === 38) {
+		} else if (e.keyCode === 39 || e.keyCode === 37) {
 			this.toggleProperty("flipped");
 
-		// Navigate right
-		} else if (e.keyCode === 39) {
+		// Navigate up recipe stack
+		} else if (e.keyCode === 38) {
 			this.incrementIndex();
 			this.set("flipped", false);
 		}
