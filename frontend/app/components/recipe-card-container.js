@@ -52,6 +52,11 @@ export default Ember.Component.extend({
 	* 
 	*/
 	keyDown: function (e) {
+
+		if (this.get("scrollActive")) {
+			return;
+		}
+		
 		// Navigate down recipe stack
 		if (e.keyCode === 40) {
 			this.decrementIndex();
