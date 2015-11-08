@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
 	classNames: ["recipe-card-container"],
+	classNameBindings: ["scrollActive:m-scroll"],
 
 	/**
 	* Properties
@@ -56,7 +57,7 @@ export default Ember.Component.extend({
 		if (this.get("scrollActive")) {
 			return;
 		}
-		
+
 		// Navigate down recipe stack
 		if (e.keyCode === 40) {
 			this.decrementIndex();

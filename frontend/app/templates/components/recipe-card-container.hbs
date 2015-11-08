@@ -1,4 +1,10 @@
-<button {{action "toggleView"}}>Scroll View</button>
+<button {{action "toggleView"}}>
+	{{#if scrollActive}}
+		Swipe
+	{{else}}
+		Scroll
+	{{/if}}
+</button>
 
 {{log 1111 scrollActive}}
 {{#each recipes as |recipe index|}}
