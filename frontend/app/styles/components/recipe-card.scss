@@ -4,6 +4,10 @@
 	display: none;
 	border: 1px solid $black;
 
+	&.m-scroll {
+		display: inline-block;
+	}
+
 	&.m-active {
 		display: inline-block;
 	}

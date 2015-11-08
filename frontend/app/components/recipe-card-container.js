@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
 	classNames: ["recipe-card-container"],
+	classNameBindings: ["scrollActive:m-scroll"],
 
 	/**
 	* Properties
@@ -11,6 +12,7 @@ export default Ember.Component.extend({
 	currentRecipe: 0,
 	recipesLength: Em.computed.reads("recipes.length"),
 	flipped: false,
+	scrollActive: null,
 
 	/**
 	* Methods
@@ -51,6 +53,11 @@ export default Ember.Component.extend({
 	* 
 	*/
 	keyDown: function (e) {
+
+		if (this.get("scrollActive")) {
+			return;
+		}
+
 		// Navigate down recipe stack
 		if (e.keyCode === 40) {
 			this.decrementIndex();
@@ -64,6 +71,16 @@ export default Ember.Component.extend({
 		} else if (e.keyCode === 38) {
 			this.incrementIndex();
 			this.set("flipped", false);
+		}
+	},
+
+
+	/**
+	* 
+	*/
+	actions: {
+		toggleView () {
+			this.toggleProperty("scrollActive");
 		}
 	}
 
