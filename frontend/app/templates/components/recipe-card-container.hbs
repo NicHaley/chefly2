@@ -1,3 +1,9 @@
+{{input type="text" value=searchValue
+	placeholder="Search for ingredients"
+	autocomplete="off"
+	enter="ingredientQuery"
+}}
+
 <button {{action "toggleView"}}>
 	{{#if scrollActive}}
 		Swipe
@@ -6,7 +12,6 @@
 	{{/if}}
 </button>
 
-{{log 1111 scrollActive}}
 {{#each recipes as |recipe index|}}
 	{{recipe-card 
 		recipe=recipe
