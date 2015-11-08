@@ -11,6 +11,7 @@ export default Ember.Component.extend({
 	currentRecipe: 0,
 	recipesLength: Em.computed.reads("recipes.length"),
 	flipped: false,
+	scrollActive: null,
 
 	/**
 	* Methods
@@ -73,7 +74,7 @@ export default Ember.Component.extend({
 	*/
 	actions: {
 		toggleView () {
-			console.log("yolo");
+			this.toggleProperty("scrollActive");
 		}
 	}
 

@@ -1,9 +1,11 @@
 <button {{action "toggleView"}}>Scroll View</button>
 
+{{log 1111 scrollActive}}
 {{#each recipes as |recipe index|}}
 	{{recipe-card 
 		recipe=recipe
 		flipped=flipped
+		scrollActive=scrollActive
 		class=(if (eq currentRecipe index) "m-active")
 	}}
 
