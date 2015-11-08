@@ -65,6 +65,16 @@ export default Ember.Component.extend({
 			this.incrementIndex();
 			this.set("flipped", false);
 		}
+	},
+
+
+	/**
+	* 
+	*/
+	actions: {
+		toggleView () {
+			console.log("yolo");
+		}
 	}
 
 });
