@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def recipes_query
-    @q = Recipe.ransack(params[:query])
+    @q = Recipe.ransack(ingredient_lines_cont: params[:query])
     @recipes = @q.result(distinct: true)
 
     render json: @recipes
