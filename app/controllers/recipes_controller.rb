@@ -12,6 +12,13 @@ class RecipesController < ApplicationController
     render json: @more_recipes
   end
 
+  def recipes_query
+    @q = Recipe.ransack(params[:query])
+    @recipes = @q.result(distinct: true)
+
+    render json: @recipes
+  end
+
   def show
   	 @recipe = Recipe.find(params[:id])
 

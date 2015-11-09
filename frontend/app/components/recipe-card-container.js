@@ -83,8 +83,13 @@ export default Ember.Component.extend({
 			this.toggleProperty("scrollActive");
 		},
 
-		ingredientQuery (value) {
-			console.log(value);
+		ingredientQuery (query) {
+
+			Ember.$.get('/recipes_query', {query: query})
+        .then(function(reponse) {
+        	console.log(reponse);
+        });
+
 		}
 	}
 

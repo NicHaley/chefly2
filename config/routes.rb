@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :blogs, only: [:index, :show]
 
   get '/get_more_recipes', to: 'recipes#get_more_recipes'
+  get '/recipes_query', to: 'recipes#recipes_query' 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
