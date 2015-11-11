@@ -9,7 +9,6 @@
 20.times do
   recipe = Recipe.create(
     name: Faker::Lorem.words.join(' '),
-    ingredient_lines: Faker::Lorem.words(rand(5)),
     servings: "Serves: 1 - #{(1 + rand(4))}",
     cook_time: "#{rand(180)} minutes",
     yield: "#{rand(6)} servings"
