@@ -8,7 +8,9 @@
 
 	<p>Cook Time: {{recipe.cookTime}}</p>
 	<p>Yield: {{recipe.yield}}</p>
-	{{recipe.ingredientLines}}
+	{{#each recipe.ingredients as |ingredient|}}
+		<p>{{ingredient}}</p>
+	{{/each}}
 
 {{/unless}}
 
