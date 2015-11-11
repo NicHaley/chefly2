@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   def index
-  	@recipes = Recipe.last(10)
+  	@recipes = Recipe.all
 
     render json: @recipes
   end
