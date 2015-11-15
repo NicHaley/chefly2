@@ -6,14 +6,25 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+ingredients = ["Chicken", "Beef", "Spinach", "Mushrooms", "Pasta", "Tomato", "Carrot"]
+
+ingredients.each do |ingredient|
+  Ingredient.create(
+    name: ingredient
+  )
+end
+
 20.times do
-  Recipe.create(
+  recipe = Recipe.create(
     name: Faker::Lorem.words.join(' '),
-    ingredient_lines: Faker::Lorem.words(rand(5)),
     servings: "Serves: 1 - #{(1 + rand(4))}",
     cook_time: "#{rand(180)} minutes",
     yield: "#{rand(6)} servings"
   )
+  3.times do
+    offset = rand(Ingredient.count)
+    recipe.ingredients << Ingredient.offset(offset).first
+  end
 end
 
 
