@@ -87,7 +87,6 @@ export default Ember.Component.extend({
 
 			Ember.$.get('/recipes_query', {query: query})
         .then(function(reponse) {
-        	console.log(reponse);
         });
 
 		}
