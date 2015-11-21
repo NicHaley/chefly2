@@ -84,12 +84,15 @@ export default Ember.Component.extend({
 		},
 
 		ingredientQuery (query) {
-
-			Ember.$.get('/recipes_query', {query: query})
-        .then(function(reponse) {
-        });
-
+			this.sendAction("ingredientQuery", query);
+			// this.transitionTo({ queryParams: { ingredients: query }});
 		}
 	}
 
 });
+
+
+
+
+
+

@@ -2,21 +2,35 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-	model() {
-		// return this.store.findAll('recipe');
+	// Query Params
+	// 
+	// queryParams: {
+	// 	ingredients: "ingredients"
+	// },
 
-		return this.store.filter("recipe", {query: "Chicken"}, function(recipe) {
-			return recipe
+
+	// Properties
+	ingredients: null,
+
+
+	// Model
+	model(params) {
+		// Query backend for recipe with specified ingredient, then return (display) recipes
+		return this.store.query("recipe", {query: this.get("ingredients")}).then( recipe => {
+			return recipe;
 		});
 	},
 
+
+	// Actions
 	actions: {
-		getMoreRecipes() {
-			console.log("yolo this was hit");
-			Ember.$.get('/get_more_recipes', {})
-        .then(function(json) {
-        });
+
+		ingredientQuery (query) {
+			this.set("ingredients", query);
+			// Update model after setting query
+			this.refresh();
 		}
+
 	}
 
 });
