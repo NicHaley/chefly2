@@ -6,6 +6,6 @@ export default DS.Model.extend({
   yield: DS.attr('string'),
   servings: DS.attr('string'),
 
-  ingredients: DS.hasMany('ingredient')
+  ingredients: DS.hasMany('ingredient'),
 
 });

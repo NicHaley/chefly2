@@ -1,7 +1,12 @@
 class RecipesController < ApplicationController
 
   def index
-  	@recipes = Recipe.all
+    if params[:query]
+      @q = Recipe.ransack(ingredients_name_cont: params[:query])
+      @recipes = @q.result(distinct: true)
+    else
+  	  @recipes = Recipe.all
+    end
 
     render json: @recipes
   end
@@ -12,12 +17,12 @@ class RecipesController < ApplicationController
     render json: @more_recipes
   end
 
-  def recipes_query
-    @q = Recipe.ransack(ingredients_name_cont: params[:query])
-    @recipes = @q.result(distinct: true)
+  # def recipes_query
+  #   @q = Recipe.ransack(ingredients_name_cont: params[:query])
+  #   @recipes = @q.result(distinct: true)
 
-    render json: @recipes
-  end
+  #   render json: @recipes
+  # end
 
   def show
   	 @recipe = Recipe.find(params[:id])
