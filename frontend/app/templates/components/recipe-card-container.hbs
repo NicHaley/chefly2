@@ -12,15 +12,16 @@
 	{{/if}}
 </button>
 
-{{#each recipes as |recipe index|}}
-	{{recipe-card 
-		recipe=recipe
-		flipped=flipped
-		scrollActive=scrollActive
-		class=(if (eq currentRecipe index) "m-active")
-	}}
+{{#if recipes}}
+	{{#each recipes as |recipe index|}}
+		{{recipe-card 
+			recipe=recipe
+			flipped=flipped
+			scrollActive=scrollActive
+			class=(if (eq currentRecipe index) "m-active")
+		}}
 
-{{/each}}
-
-
-{{!-- <button {{action "getMoreRecipes"}}>Get More</button> --}}
+	{{/each}}
+{{else}}
+	No search results matched your query
+{{/if}}
