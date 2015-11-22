@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
 	// Properties
-	ingredients: null,
+	ingredients: [],
 
 
 	// Model
@@ -19,7 +19,7 @@ export default Ember.Route.extend({
 	actions: {
 
 		ingredientQuery (query) {
-			this.set("ingredients", query);
+			this.get("ingredients").pushObject(query);
 			// Update model after setting query
 			this.refresh();
 		}

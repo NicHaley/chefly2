@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   def index
     if params[:query]
 
-      ingredients_array = ["Chicken", "Mushrooms"]
+      ingredients_array = params[:query]
 
       @recipes = ingredients_array.inject([]) do |result,ingredient|
         recipe_with_ingredient = Recipe.ransack(ingredients_name_cont: ingredient).result(distinct: true)
