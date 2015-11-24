@@ -116,7 +116,10 @@ export default Ember.Component.extend({
      *
      */
     removeIngredient (ingredient) {
-      console.log("hit");
+      let ingredients = this.get("ingredients");
+
+      ingredients.removeObject(ingredient);
+			this.sendAction("ingredientQuery", ingredients);
     }
 	}
 
