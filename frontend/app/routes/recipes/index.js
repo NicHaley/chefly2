@@ -19,7 +19,7 @@ export default Ember.Route.extend({
 	actions: {
 
 		ingredientQuery (query) {
-			this.get("ingredients").pushObject(query);
+			this.set("ingredients", query);
 			// Update model after setting query
 			this.refresh();
 		}

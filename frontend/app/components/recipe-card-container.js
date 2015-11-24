@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 	classNames: ["recipe-card-container"],
 	classNameBindings: ["scrollActive:m-scroll"],
 
+
 	/**
 	* Properties
 	*/
@@ -13,6 +14,8 @@ export default Ember.Component.extend({
 	recipesLength: Em.computed.reads("recipes.length"),
 	flipped: false,
 	scrollActive: null,
+  ingredients: [],
+
 
 	/**
 	* Methods
@@ -28,6 +31,10 @@ export default Ember.Component.extend({
 		}
 	},
 
+
+  /**
+   *
+   */
 	decrementIndex: function () {
 		let currentRecipe = this.get("currentRecipe"),
 				lastRecipe = this.get("recipesLength") - 1;
@@ -43,14 +50,14 @@ export default Ember.Component.extend({
 	/**
 	* Focus element on insert so that keyDown is triggered
 	*/
-	didInsertElement(){
+	didInsertElement() {
 	   this.$().attr('tabindex',0);
 	   this.$().focus();
 	},
 
 
 	/**
-	* 
+	*
 	*/
 	keyDown: function (e) {
 
@@ -61,7 +68,7 @@ export default Ember.Component.extend({
 		// Navigate down recipe stack
 		if (e.keyCode === 40) {
 			this.decrementIndex();
-			this.set("flipped", false);		
+			this.set("flipped", false);
 
 		// See more card info
 		} else if (e.keyCode === 39 || e.keyCode === 37) {
@@ -76,17 +83,35 @@ export default Ember.Component.extend({
 
 
 	/**
-	* 
+	*
 	*/
 	actions: {
+
+    /**
+     *
+     */
 		toggleView () {
 			this.toggleProperty("scrollActive");
 		},
 
-		ingredientQuery (query) {
-			this.sendAction("ingredientQuery", query);
-			// this.transitionTo({ queryParams: { ingredients: query }});
-		}
+
+    /**
+     *
+     */
+		addIngredient (ingredient) {
+      let ingredients = this.get("ingredients");
+
+      ingredients.pushObject(ingredient);
+			this.sendAction("ingredientQuery", ingredients);
+		},
+
+
+    /**
+     *
+     */
+    removeIngredient (ingredient) {
+      console.log("hit");
+    }
 	}
 
 });
