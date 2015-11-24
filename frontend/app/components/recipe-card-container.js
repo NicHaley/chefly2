@@ -14,6 +14,11 @@ export default Ember.Component.extend({
 	recipesLength: Em.computed.reads("recipes.length"),
 	flipped: false,
 	scrollActive: null,
+
+	/**
+	* 
+	*/
+	ingredientQueryText: null,
   ingredients: [],
 
 
@@ -98,11 +103,12 @@ export default Ember.Component.extend({
     /**
      *
      */
-		addIngredient (ingredient) {
+		addIngredient (ingredientQueryText) {
       let ingredients = this.get("ingredients");
 
-      ingredients.pushObject(ingredient);
+      ingredients.pushObject(ingredientQueryText);
 			this.sendAction("ingredientQuery", ingredients);
+			this.set("ingredientQueryText","");
 		},
 
 
