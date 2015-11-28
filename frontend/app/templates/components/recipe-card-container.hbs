@@ -1,8 +1,12 @@
-{{input type="text" value=searchValue
+{{input type="text" value=ingredientQueryText
 	placeholder="Search for ingredients"
 	autocomplete="off"
-	enter="ingredientQuery"
+	enter="addIngredient"
 }}
+
+{{#each ingredients as |ingredient|}}
+  <div {{action "removeIngredient" ingredient}}>{{ingredient}}</div>
+{{/each}}
 
 <button {{action "toggleView"}}>
 	{{#if scrollActive}}
@@ -14,7 +18,7 @@
 
 {{#if recipes}}
 	{{#each recipes as |recipe index|}}
-		{{recipe-card 
+		{{recipe-card
 			recipe=recipe
 			flipped=flipped
 			scrollActive=scrollActive
