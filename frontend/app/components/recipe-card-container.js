@@ -2,13 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-	classNames: ["recipe-card-container"],
+	classNames: ["b-recipe-card-container"],
+	b: "b-recipe-card-container",
 	classNameBindings: ["scrollActive:m-scroll"],
 
 
 	/**
 	* Properties
 	*/
+	b: "recipe-card-container",
 	recipes: null,
 	currentRecipe: 0,
 	recipesLength: Em.computed.reads("recipes.length"),
