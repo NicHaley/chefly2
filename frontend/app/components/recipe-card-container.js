@@ -10,18 +10,11 @@ export default Ember.Component.extend({
 	/**
 	* Properties
 	*/
-	b: "recipe-card-container",
 	recipes: null,
 	currentRecipe: 0,
 	recipesLength: Em.computed.reads("recipes.length"),
 	flipped: false,
 	scrollActive: null,
-
-	/**
-	* 
-	*/
-	ingredientQueryText: null,
-  ingredients: [],
 
 
 	/**
@@ -99,30 +92,7 @@ export default Ember.Component.extend({
      */
 		toggleView () {
 			this.toggleProperty("scrollActive");
-		},
-
-
-    /**
-     *
-     */
-		addIngredient (ingredientQueryText) {
-      let ingredients = this.get("ingredients");
-
-      ingredients.pushObject(ingredientQueryText);
-			this.sendAction("ingredientQuery", ingredients);
-			this.set("ingredientQueryText","");
-		},
-
-
-    /**
-     *
-     */
-    removeIngredient (ingredient) {
-      let ingredients = this.get("ingredients");
-
-      ingredients.removeObject(ingredient);
-			this.sendAction("ingredientQuery", ingredients);
-    }
+		}
 	}
 
 });

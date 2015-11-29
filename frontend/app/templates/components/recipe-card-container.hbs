@@ -1,31 +1,27 @@
-{{input type="text" value=ingredientQueryText
-	placeholder="Search for ingredients"
-	autocomplete="off"
-	enter="addIngredient"
-}}
+<div class="{{b}}__filter-controlers">
+	<button {{action "toggleView"}}>
+		{{#if scrollActive}}
+			Swipe
+		{{else}}
+			Scroll
+		{{/if}}
+	</button>
+</div>
 
-{{#each ingredients as |ingredient|}}
-  <div {{action "removeIngredient" ingredient}}>{{ingredient}}</div>
-{{/each}}
+<div class="{{b}}__container">
 
-<button {{action "toggleView"}}>
-	{{#if scrollActive}}
-		Swipe
+	{{#if recipes}}
+		{{#each recipes as |recipe index|}}
+			{{recipe-card
+				recipe=recipe
+				flipped=flipped
+				scrollActive=scrollActive
+				class=(if (eq currentRecipe index) "m-active")
+			}}
+
+		{{/each}}
 	{{else}}
-		Scroll
+		No search results matched your query
 	{{/if}}
-</button>
-
-{{#if recipes}}
-	{{#each recipes as |recipe index|}}
-		{{recipe-card
-			recipe=recipe
-			flipped=flipped
-			scrollActive=scrollActive
-			class=(if (eq currentRecipe index) "m-active")
-		}}
-
-	{{/each}}
-{{else}}
-	No search results matched your query
-{{/if}}
+	
+</div>
