@@ -1,0 +1,15 @@
+.b-nav-bar {
+	height: 50px;
+
+	// Bootstrap overrides
+	nav.navbar.navbar-default {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background-color: $navbar-color;
+
+  	.navbar-brand {
+			color: $white;
+		}
+	}
+}

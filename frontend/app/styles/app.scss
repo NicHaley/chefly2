@@ -7,5 +7,21 @@
 @import "main";
 
 /* Components */
+@import "components/nav-bar";
 @import "components/recipe-card-container";
 @import "components/recipe-card";
+
+
+/* Application Container */
+.b-application {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	&__container {
+		position: absolute;
+		width: 100%;
+		height: calc(100% - 50px);
+	}
+}

@@ -3,6 +3,12 @@
 */
 $black:								#000;
 $white:								#fff;
+$main-colour:					#D75252;
+
+/*
+* FONTS
+*/
+$freight:							"freight-sans-pro";
 
 
 /*
@@ -11,3 +17,7 @@ $white:								#fff;
 
 // General
 $main-border-color:		$black;
+
+// Navbar
+$navbar-color:				$main-colour;
+
