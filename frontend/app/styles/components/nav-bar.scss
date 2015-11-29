@@ -1,5 +1,5 @@
 .b-nav-bar {
-	height: 50px;
+	height: $navbar-height;
 
 	// Bootstrap overrides
 	nav.navbar.navbar-default {
@@ -7,9 +7,13 @@
     border: none;
     border-radius: 0;
     background-color: $navbar-color;
+    min-height: $navbar-height;
+    height: $navbar-height;
 
   	.navbar-brand {
 			color: $white;
+			padding: 0 15px;
+			line-height: $navbar-height;
 		}
 	}
 }
