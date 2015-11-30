@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 	*/
 	recipes: null,
 	currentRecipe: 0,
-	recipesLength: Em.computed.reads("recipes.length"),
+	recipesLength: Ember.computed.reads("recipes.length"),
 	flipped: false,
 	gridActive: true,
 
