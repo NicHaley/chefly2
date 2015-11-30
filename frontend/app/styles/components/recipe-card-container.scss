@@ -2,15 +2,18 @@
 	width: 100%;
 	outline: none;
 
-	&.m-scroll {
-		display: block;
-		text-align: center;
-	}
-
 	&__container {
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding: $main-margin 0;
+
+		&.m-grid {
+			display: block;
+			-moz-column-width: 320px;
+			-webkit-column-width: 320px;
+			column-width: 320px;
+		}
 	}
 }

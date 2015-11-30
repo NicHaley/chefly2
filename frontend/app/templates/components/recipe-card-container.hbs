@@ -1,6 +1,6 @@
 <div class="{{b}}__filter-controlers">
 	<button {{action "toggleView"}}>
-		{{#if scrollActive}}
+		{{#if gridActive}}
 			Swipe
 		{{else}}
 			Scroll
@@ -8,14 +8,14 @@
 	</button>
 </div>
 
-<div class="{{b}}__container">
+<div class="{{b}}__container {{if gridActive "m-grid"}}">
 
 	{{#if recipes}}
 		{{#each recipes as |recipe index|}}
 			{{recipe-card
 				recipe=recipe
 				flipped=flipped
-				scrollActive=scrollActive
+				gridActive=gridActive
 				class=(if (eq currentRecipe index) "m-active")
 			}}
 

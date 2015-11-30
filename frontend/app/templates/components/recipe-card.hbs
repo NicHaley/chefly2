@@ -1,17 +1,35 @@
-{{#unless flipped}}
-	<h2>{{recipe.name}}</h2>
+{{#if gridActive}}
+
+	<div class="{{b}}__grid-container">
+		<h3 class="{{b}}__grid-container__title">{{recipe.name}}</h3>
+		<p>Cook Time: {{recipe.cookTime}}</p>
+		<p>Yield: {{recipe.yield}}</p>
+		{{#each recipe.ingredients as |ingredient|}}
+			<p>{{ingredient.name}}</p>
+		{{/each}}
+	</div>
+
 {{else}}
 
-	{{#link-to "recipes.recipe" recipe.id}}
-		<h4>{{recipe.name}}</h4>
-	{{/link-to}}
+	{{#unless flipped}}
+		<h2>{{recipe.name}}</h2>
+	{{else}}
 
-	<p>Cook Time: {{recipe.cookTime}}</p>
-	<p>Yield: {{recipe.yield}}</p>
-	{{#each recipe.ingredients as |ingredient|}}
-		<p>{{ingredient.name}}</p>
-	{{/each}}
+		{{#link-to "recipes.recipe" recipe.id}}
+			<h4>{{recipe.name}}</h4>
+		{{/link-to}}
 
-{{/unless}}
+		<p>Cook Time: {{recipe.cookTime}}</p>
+		<p>Yield: {{recipe.yield}}</p>
+		{{#each recipe.ingredients as |ingredient|}}
+			<p>{{ingredient.name}}</p>
+		{{/each}}
+
+	{{/unless}}
+
+{{/if}}
+
+
+
 
 

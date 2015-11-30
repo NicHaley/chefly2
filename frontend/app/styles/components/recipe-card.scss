@@ -2,10 +2,23 @@
 	height: 400px;
 	width: 600px;
 	display: none;
-	border: 1px solid $black;
+	border: 1px solid $main-border-color;
 
-	&.m-scroll {
-		display: inline-block;
+	&.m-grid {
+    display: inline-block;
+  	-moz-column-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    column-break-inside: avoid;
+    width: inherit;
+    height: inherit;
+    margin-bottom: 15px;
+    padding: 10px;
+	}
+
+	&__grid-container {
+		&__title {
+			margin-top: 0;
+		}
 	}
 
 	&.m-active {

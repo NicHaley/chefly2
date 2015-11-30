@@ -4,7 +4,6 @@ export default Ember.Component.extend({
 
 	classNames: ["b-recipe-card-container"],
 	b: "b-recipe-card-container",
-	classNameBindings: ["scrollActive:m-scroll"],
 
 
 	/**
@@ -14,7 +13,7 @@ export default Ember.Component.extend({
 	currentRecipe: 0,
 	recipesLength: Em.computed.reads("recipes.length"),
 	flipped: false,
-	scrollActive: null,
+	gridActive: true,
 
 
 	/**
@@ -30,7 +29,7 @@ export default Ember.Component.extend({
 			this.set("currentRecipe", 0);
 		}
 	},
-
+	
 
   /**
    *
@@ -61,7 +60,7 @@ export default Ember.Component.extend({
 	*/
 	keyDown: function (e) {
 
-		if (this.get("scrollActive")) {
+		if (this.get("gridActive")) {
 			return;
 		}
 
@@ -91,7 +90,7 @@ export default Ember.Component.extend({
      *
      */
 		toggleView () {
-			this.toggleProperty("scrollActive");
+			this.toggleProperty("gridActive");
 		}
 	}
 
