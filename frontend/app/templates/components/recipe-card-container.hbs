@@ -1,13 +1,13 @@
-<div class="{{b}}__filter-controlers">
-	<i class="mdi mdi-bell"></i>
-	<button {{action "toggleView"}}>
+<div class="{{b}}__filter-controls">
+	<button class="{{b}}__filter-controls__button" {{action "toggleView"}}>
 		{{#if gridActive}}
-			Swipe
+			<i class="material-icons {{b}}__filter-controls__button__icon">view_array</i>
 		{{else}}
-			Scroll
+			<i class="material-icons {{b}}__filter-controls__button__icon">view_module</i>
 		{{/if}}
 	</button>
 </div>
+
 
 <div class="{{b}}__container {{if gridActive "m-grid"}}">
 
