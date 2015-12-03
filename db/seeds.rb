@@ -22,9 +22,9 @@ end
     yield: "#{rand(6)} servings",
     ingredient_lines: [],
     image_urls: [
-      "http://s.iamafoodblog.com/wp-content/uploads/2015/10/meatlovers-pizza-9.jpg", 
-      "http://s.iamafoodblog.com/wp-content/uploads/2015/10/meatlovers-pizza-4.jpg",
-      "http://iamafoodblog.com/the-ultimate-meat-lovers-pizza/"
+      Faker::Avatar.image, 
+      Faker::Avatar.image,
+      Faker::Avatar.image
     ],
   )
   4.times do

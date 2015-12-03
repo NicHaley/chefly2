@@ -1,11 +1,11 @@
 {{#if gridActive}}
 
 	<div class="{{b}}__grid-container">
-		{{#each recipe.imageUrls as |imageUrl|}}
-			<img src="imageUrl">
+		{{#each recipe.image_urls as |imageUrl|}}
+			<img class="{{b}}__grid-container__image" src="{{imageUrl}}">
 		{{/each}}
 		<h3 class="{{b}}__grid-container__title">{{recipe.name}}</h3>
-		<p>Cook Time: {{recipe.cookTime}}</p>
+		<p>Cook Time: {{recipe.cook_time}}</p>
 		<p>Yield: {{recipe.yield}}</p>
 		{{#each recipe.ingredients as |ingredient|}}
 			<p>{{ingredient.name}}</p>
