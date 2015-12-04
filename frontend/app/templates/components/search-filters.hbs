@@ -2,8 +2,11 @@
 	placeholder="Search for ingredients"
 	autocomplete="off"
 	enter="addIngredient"
+	class=(concat b "__input")
 }}
 
-{{#each ingredients as |ingredient|}}
-  <div {{action "removeIngredient" ingredient}}>{{ingredient}}</div>
-{{/each}}
+<div class="{{b}}__added-ingredients">
+	{{#each ingredients as |ingredient|}}
+	  <div {{action "removeIngredient" ingredient}}>{{ingredient}}</div>
+	{{/each}}
+</div>

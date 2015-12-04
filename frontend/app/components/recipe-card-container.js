@@ -49,10 +49,10 @@ export default Ember.Component.extend({
 	/**
 	* Focus element on insert so that keyDown is triggered
 	*/
-	didInsertElement() {
-	   this.$().attr('tabindex',0);
-	   this.$().focus();
-	},
+	// didInsertElement() {
+	//    this.$().attr('tabindex',0);
+	//    this.$().focus();
+	// },
 
 
 	/**

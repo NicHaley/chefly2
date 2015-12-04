@@ -7,11 +7,6 @@ export default Ember.Component.extend({
 	*/
 	classNames: ["b-recipe-card"],
 	b: "b-recipe-card",
-	
-	classNameBindings: ["gridActive:m-grid"],
-	flipped: null,
-	gridActive: null,
-
 
 	/**
 	* Methods

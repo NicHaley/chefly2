@@ -1,23 +1,15 @@
 <div class="{{b}}__filter-controls">
 	<button class="{{b}}__filter-controls__button" {{action "toggleView"}}>
-		{{#if gridActive}}
 			<i class="material-icons {{b}}__filter-controls__button__icon">view_array</i>
-		{{else}}
-			<i class="material-icons {{b}}__filter-controls__button__icon">view_module</i>
-		{{/if}}
 	</button>
 </div>
 
-
-<div class="{{b}}__container {{if gridActive "m-grid"}}">
+<div class="{{b}}__container">
 
 	{{#if recipes}}
-		{{#each recipes as |recipe index|}}
+		{{#each recipes as |recipe|}}
 			{{recipe-card
 				recipe=recipe
-				flipped=flipped
-				gridActive=gridActive
-				class=(if (eq currentRecipe index) "m-active")
 			}}
 
 		{{/each}}
