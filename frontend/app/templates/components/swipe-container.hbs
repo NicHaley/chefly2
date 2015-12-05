@@ -2,17 +2,19 @@
 	<i class="material-icons {{b}}__filter-controls__button__icon">view_module</i>
 </button>
 
-<div class="{{b}}__previous-recipe">
-	<img src="{{previousRecipe.image_urls.[0]}}" class="{{b}}__image}}" {{action "switchRecipe" "previous"}}>
-</div>
+<div class="{{b}}__recipes">
+	<div class="{{b}}__switch-recipe">
+		<img src="{{previousRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" {{action "switchRecipe" "previous"}}>
+	</div>
 
-<div class="{{b}}__active-recipe">
-	{{recipe-card-swipe
-		activeRecipe=activeRecipe
-		imageIndex=imageIndex		
-	}}
-</div>
+	<div class="{{b}}__active-recipe">
+		{{recipe-card-swipe
+			activeRecipe=activeRecipe
+			imageIndex=imageIndex		
+		}}
+	</div>
 
-<div class="{{b}}__next-recipe">
-	<img src="{{nextRecipe.image_urls.[0]}}" class="{{b}}__image}}" {{action "switchRecipe" "next"}}>
+	<div class="{{b}}__switch-recipe">
+		<img src="{{nextRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" {{action "switchRecipe" "next"}}>
+	</div>
 </div>
