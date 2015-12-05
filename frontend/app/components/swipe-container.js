@@ -15,7 +15,14 @@ export default Ember.Component.extend({
      */
 		toggleView () {
 			this.sendAction("toggleView");
-		}
+		},
+
+    /**
+     *
+     */
+    switchRecipe (direction) {
+    	this.sendAction("switchRecipe", direction);
+    }
 	}
 
 });

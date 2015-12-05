@@ -80,18 +80,6 @@ export default Ember.Component.extend({
   },
 
 
-	// decrementIndex: function () {
-	// 	let currentRecipe = this.get("currentRecipe"),
-	// 			lastRecipe = this.get("recipesLength") - 1;
-
-	// 	if (currentRecipe !== 0) {
-	// 		this.set("currentRecipe", currentRecipe - 1);
-	// 	} else {
-	// 		this.set("currentRecipe", lastRecipe);
-	// 	}
-	// },
-
-
 	/**
 	* Focus element on insert so that keyDown is triggered
 	*/
@@ -133,16 +121,16 @@ export default Ember.Component.extend({
 	actions: {
 
     /**
-     *
-     */
+    *
+    */
 		toggleView () {
 			this.toggleProperty("swipeActive");
 		},
 
 
     /**
-     *
-     */
+    *
+    */
     setModalRecipe (recipeIndex, imageIndex) {
 
     	this.setProperties({
@@ -152,6 +140,26 @@ export default Ember.Component.extend({
 
     	this.toggleProperty("swipeActive");
 
+    },
+
+
+    /**
+    *
+    */
+    switchRecipe (direction) {
+
+			let currentIndex = this.get("recipeIndex"),
+					length 			 = this.get("recipesLength");
+
+    	if (direction === "previous") {
+
+    		this.set("recipeIndex", this.previousIndex(currentIndex, length))
+
+    	} else if (direction === "next") {
+
+    		this.set("recipeIndex", this.nextIndex(currentIndex, length))
+
+    	}
     }
 	}
 
