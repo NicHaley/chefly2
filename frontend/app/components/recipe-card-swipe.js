@@ -10,12 +10,6 @@ export default Ember.Component.extend({
 	*/
 	actions: {
 
-    /**
-     *
-     */
-		toggleView () {
-			this.sendAction("toggleView");
-		}
 	}
 
 });

@@ -1,30 +1,20 @@
 .b-recipe-card-swipe {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	background-color: rgba(0,0,0,0.9);
-	z-index: 1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	height: 400px;
+	width: 600px;
+	background-color: white;
 
-	&__active-recipe {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		height: 400px;
-		width: 600px;
-		background-color: white;
+	&__image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		display: none;
 
-		&__image {
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-			display: none;
-
-			&.m-image_active {
-				display: inline-block;
-			}
+		&.m-image_active {
+			display: inline-block;
 		}
 	}
 }

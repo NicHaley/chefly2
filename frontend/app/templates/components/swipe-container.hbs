@@ -1,0 +1,10 @@
+<button class="{{b}}__filter-controls__button" {{action "toggleView"}}>
+	<i class="material-icons {{b}}__filter-controls__button__icon">view_module</i>
+</button>
+
+<div class="{{b}}__active-recipe">
+	{{recipe-card-swipe
+		activeRecipe=activeRecipe
+		imageIndex=imageIndex		
+	}}
+</div>
