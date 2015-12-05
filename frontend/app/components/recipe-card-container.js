@@ -17,6 +17,9 @@ export default Ember.Component.extend({
 	recipeIndex: 0,
 	imageIndex: 0,
 
+	/**
+	*
+	*/
 	activeRecipe: function () {
 
 		return this.get("recipes").objectAt(this.get("recipeIndex"));
@@ -25,33 +28,68 @@ export default Ember.Component.extend({
 
 
 	/**
-	* Methods
+	*
 	*/
-	incrementIndex: function () {
-		let currentRecipe = this.get("currentRecipe"),
-				lastRecipe = this.get("recipesLength") - 1;
+	nextRecipe: function () {
 
-		if (currentRecipe !== lastRecipe) {
-			this.set("currentRecipe", currentRecipe + 1);
+		let nextIndex = this.nextIndex(this.get("recipeIndex"), this.get("recipesLength"));
+
+		return this.get("recipes").objectAt(nextIndex);
+
+	}.property("recipeIndex", "recipesLength"),
+
+
+	/**
+	*
+	*/
+	previousRecipe: function () {
+
+		let previousIndex = this.previousIndex(this.get("recipeIndex"), this.get("recipesLength"));
+
+		console.log("324234234", previousIndex);
+
+		return this.get("recipes").objectAt(previousIndex);
+
+	}.property("recipeIndex", "recipesLength"),
+
+
+	/**
+	*
+	*/
+	nextIndex: function (currentIndex, length) {
+
+		if (currentIndex !== length - 1) {
+			return currentIndex + 1;
 		} else {
-			this.set("currentRecipe", 0);
+			return 0;
 		}
 	},
 	
 
   /**
-   *
-   */
-	decrementIndex: function () {
-		let currentRecipe = this.get("currentRecipe"),
-				lastRecipe = this.get("recipesLength") - 1;
+  *
+  */
+  previousIndex: function (currentIndex, length) {
 
-		if (currentRecipe !== 0) {
-			this.set("currentRecipe", currentRecipe - 1);
-		} else {
-			this.set("currentRecipe", lastRecipe);
-		}
-	},
+  	if (currentIndex !== 0) {
+  		return currentIndex - 1;
+  	} else {
+  		return length - 1;
+  	}
+
+  },
+
+
+	// decrementIndex: function () {
+	// 	let currentRecipe = this.get("currentRecipe"),
+	// 			lastRecipe = this.get("recipesLength") - 1;
+
+	// 	if (currentRecipe !== 0) {
+	// 		this.set("currentRecipe", currentRecipe - 1);
+	// 	} else {
+	// 		this.set("currentRecipe", lastRecipe);
+	// 	}
+	// },
 
 
 	/**

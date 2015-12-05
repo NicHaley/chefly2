@@ -1,11 +1,6 @@
 .b-recipe-card-swipe {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	height: 400px;
-	width: 600px;
-	background-color: white;
+	height: 100%;
+	width: 100%;
 
 	&__image {
 		height: 100%;
