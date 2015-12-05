@@ -1,0 +1,11 @@
+<button class="{{b}}__filter-controls__button" {{action "toggleView"}}>
+	<i class="material-icons {{b}}__filter-controls__button__icon">view_module</i>
+</button>
+
+<div class="{{b}}__active-recipe">
+	{{#each activeRecipe.image_urls as |url index|}}
+		<img src="{{url}}" class="{{b}}__active-recipe__image {{if (eq index imageIndex) "m-image_active"}}">
+	{{/each}}
+	{{activeRecipe.name}}
+	}
+</div>

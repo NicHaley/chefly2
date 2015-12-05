@@ -13,6 +13,20 @@ export default Ember.Component.extend({
 	*/
 	click: function () {
 		this.toggleProperty("flipped");
+	},
+
+
+	/**
+	* Actions
+	*/
+	actions: {
+		/**
+		*
+		*/
+		setModalRecipe(recipeIndex, imageIndex) {
+			this.sendAction("setModalRecipe", recipeIndex, imageIndex);
+		}
 	}
+	
 
 });

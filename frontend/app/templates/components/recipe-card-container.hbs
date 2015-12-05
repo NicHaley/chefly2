@@ -1,15 +1,25 @@
 <div class="{{b}}__filter-controls">
 	<button class="{{b}}__filter-controls__button" {{action "toggleView"}}>
-			<i class="material-icons {{b}}__filter-controls__button__icon">view_array</i>
+		<i class="material-icons {{b}}__filter-controls__button__icon">view_array</i>
 	</button>
 </div>
+
+{{#if swipeActive}}
+	{{recipe-card-swipe
+		toggleView=(action "toggleView")
+		activeRecipe=activeRecipe
+		imageIndex=imageIndex
+	}}
+{{/if}}
 
 <div class="{{b}}__container">
 
 	{{#if recipes}}
-		{{#each recipes as |recipe|}}
+		{{#each recipes as |recipe index|}}
 			{{recipe-card
 				recipe=recipe
+				recipeIndex=index
+				setModalRecipe=(action "setModalRecipe")
 			}}
 
 		{{/each}}

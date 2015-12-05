@@ -13,7 +13,15 @@ export default Ember.Component.extend({
 	currentRecipe: 0,
 	recipesLength: Ember.computed.reads("recipes.length"),
 	flipped: false,
-	gridActive: true,
+	swipeActive: false,
+	recipeIndex: 0,
+	imageIndex: 0,
+
+	activeRecipe: function () {
+
+		return this.get("recipes").objectAt(this.get("recipeIndex"));
+
+	}.property("recipeIndex"),
 
 
 	/**
@@ -82,7 +90,7 @@ export default Ember.Component.extend({
 
 
 	/**
-	*
+	* Actions
 	*/
 	actions: {
 
@@ -90,8 +98,23 @@ export default Ember.Component.extend({
      *
      */
 		toggleView () {
-			this.toggleProperty("gridActive");
-		}
+			this.toggleProperty("swipeActive");
+		},
+
+
+    /**
+     *
+     */
+    setModalRecipe (recipeIndex, imageIndex) {
+
+    	this.setProperties({
+    		recipeIndex: recipeIndex,
+    		imageIndex: imageIndex
+    	});
+
+    	this.toggleProperty("swipeActive");
+
+    }
 	}
 
 });
