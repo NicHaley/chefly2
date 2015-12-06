@@ -8,9 +8,17 @@ export default Ember.Component.extend({
 	classNames: ["b-recipe-card"],
 	b: "b-recipe-card",
 
+	recipe: null,
+
+
 	/**
 	* Methods
 	*/
+	isOdd: function (num) {
+		return num % 2;
+	},
+
+
 	click: function () {
 		this.toggleProperty("flipped");
 	},
