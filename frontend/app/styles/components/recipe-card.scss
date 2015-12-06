@@ -1,31 +1,19 @@
 .b-recipe-card {
-	height: 400px;
-	width: 600px;
-	display: none;
 	border: 1px solid $main-border-color;
-
-	&.m-grid {
-    display: inline-block;
   	-moz-column-break-inside: avoid;
     -webkit-column-break-inside: avoid;
     column-break-inside: avoid;
     width: inherit;
     height: inherit;
-    margin-bottom: 15px;
     padding: 10px;
+	margin-top: 0;
+
+	&__image {
+		width: 100%;
+        cursor: pointer;
 	}
 
-	&__grid-container {
-		&__title {
-			margin-top: 0;
-		}
-
-		&__image {
-			width: 100%;
-		}
-	}
-
-	&.m-active {
-		display: inline-block;
-	}
+    &__instructions {
+        cursor: pointer;
+    }
 }

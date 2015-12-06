@@ -1,0 +1,25 @@
+.b-recipe-card-swipe {
+	position: relative;
+	height: 100%;
+	width: 100%;
+
+	&__image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		display: none;
+
+		&.m-image_active {
+			display: inline-block;
+		}
+	}
+
+	&__name {
+		position: absolute;
+		z-index: 1;
+    bottom: 0;
+    left: 0;
+    padding: 20px 20px;
+    margin: 0;
+	}
+}

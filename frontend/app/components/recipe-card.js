@@ -7,17 +7,26 @@ export default Ember.Component.extend({
 	*/
 	classNames: ["b-recipe-card"],
 	b: "b-recipe-card",
-	
-	classNameBindings: ["gridActive:m-grid"],
-	flipped: null,
-	gridActive: null,
-
 
 	/**
 	* Methods
 	*/
 	click: function () {
 		this.toggleProperty("flipped");
+	},
+
+
+	/**
+	* Actions
+	*/
+	actions: {
+		/**
+		*
+		*/
+		setModalRecipe(recipeIndex, imageIndex) {
+			this.sendAction("setModalRecipe", recipeIndex, imageIndex);
+		}
 	}
+	
 
 });

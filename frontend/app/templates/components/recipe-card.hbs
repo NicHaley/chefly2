@@ -1,37 +1,17 @@
-{{#if gridActive}}
+{{#each recipe.image_urls as |imageUrl imageIndex|}}
+	<img class="{{b}}__image" src="{{imageUrl}}" {{action "setModalRecipe" recipeIndex imageIndex}}>
+{{/each}}
 
-	<div class="{{b}}__grid-container">
-		{{#each recipe.image_urls as |imageUrl|}}
-			<img class="{{b}}__grid-container__image" src="{{imageUrl}}">
-		{{/each}}
-		<h3 class="{{b}}__grid-container__title">{{recipe.name}}</h3>
-		<p>Cook Time: {{recipe.cook_time}}</p>
-		<p>Yield: {{recipe.yield}}</p>
-		{{#each recipe.ingredients as |ingredient|}}
-			<p>{{ingredient.name}}</p>
-		{{/each}}
-	</div>
+<div class="{{b}}__instructions" {{action "setModalRecipe" recipeIndex recipe.image_urls.length}}>
+	<h3 class="{{b}}__instructions__title">{{recipe.name}}</h3>
 
-{{else}}
+	<p>Cook Time: {{recipe.cook_time}}</p>
+	<p>Yield: {{recipe.yield}}</p>
 
-	{{#unless flipped}}
-		<h2>{{recipe.name}}</h2>
-	{{else}}
-
-		{{#link-to "recipes.recipe" recipe.id}}
-			<h4>{{recipe.name}}</h4>
-		{{/link-to}}
-
-		<p>Cook Time: {{recipe.cookTime}}</p>
-		<p>Yield: {{recipe.yield}}</p>
-		{{#each recipe.ingredients as |ingredient|}}
-			<p>{{ingredient.name}}</p>
-		{{/each}}
-
-	{{/unless}}
-
-{{/if}}
-
+	{{#each recipe.ingredients as |ingredient|}}
+		<p>{{ingredient.name}}</p>
+	{{/each}}
+</div>
 
 
 

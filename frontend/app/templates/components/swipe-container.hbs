@@ -1,0 +1,43 @@
+<button class="{{b}}__filter-button g-icon-button" {{action "toggleView"}}>
+	<i class="material-icons m-white m-small">clear</i>
+</button>
+
+<div class="{{b}}__recipes-container">
+
+	{{#if (not-eq imageIndex 0)}}
+		<div class="{{b}}__button-container m-top">
+			<button class="g-icon-button">
+				<i class="material-icons m-white m-large" {{action "cycleImage" "up"}}>chevron_left</i>
+			</button>
+		</div>
+	{{/if}}
+
+	<div class="{{b}}__recipes">
+		<div class="{{b}}__switch-recipe" {{action "switchRecipe" "previous"}}>
+			<div class="{{b}}__switch-recipe__mask"></div>
+			<img src="{{previousRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" >
+		</div>
+
+		<div class="{{b}}__active-recipe">
+			{{recipe-card-swipe
+				activeRecipe=activeRecipe
+				imageIndex=imageIndex
+				showIngredients=showIngredients		
+			}}
+		</div>
+
+		<div class="{{b}}__switch-recipe" {{action "switchRecipe" "next"}}>
+			<div class="{{b}}__switch-recipe__mask"></div>	
+			<img src="{{nextRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" >
+		</div>
+	</div>
+
+	{{#unless showIngredients}}
+		<div class="{{b}}__button-container m-bottom">
+			<button class="g-icon-button">
+				<i class="material-icons m-white m-large" {{action "cycleImage" "down"}}>chevron_left</i>
+			</button>
+		</div>
+	{{/unless}}
+
+</div>

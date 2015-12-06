@@ -1,23 +1,28 @@
 <div class="{{b}}__filter-controls">
-	<button class="{{b}}__filter-controls__button" {{action "toggleView"}}>
-		{{#if gridActive}}
-			<i class="material-icons {{b}}__filter-controls__button__icon">view_array</i>
-		{{else}}
-			<i class="material-icons {{b}}__filter-controls__button__icon">view_module</i>
-		{{/if}}
+	<button class="g-icon-button" {{action "toggleView"}}>
+		<i class="material-icons m-main">view_array</i>
 	</button>
 </div>
 
+{{#if swipeActive}}
+	{{swipe-container
+		toggleView=(action "toggleView")
+		activeRecipe=activeRecipe
+		nextRecipe=nextRecipe
+		previousRecipe=previousRecipe
+		imageIndex=imageIndex
+		switchRecipe=(action "switchRecipe")
+	}}
+{{/if}}
 
-<div class="{{b}}__container {{if gridActive "m-grid"}}">
+<div class="{{b}}__container">
 
 	{{#if recipes}}
 		{{#each recipes as |recipe index|}}
 			{{recipe-card
 				recipe=recipe
-				flipped=flipped
-				gridActive=gridActive
-				class=(if (eq currentRecipe index) "m-active")
+				recipeIndex=index
+				setModalRecipe=(action "setModalRecipe")
 			}}
 
 		{{/each}}
