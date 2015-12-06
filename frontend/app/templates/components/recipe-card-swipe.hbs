@@ -1,4 +1,14 @@
-{{#each activeRecipe.image_urls as |url index|}}
-	<img src="{{url}}" class="{{b}}__image {{if (eq index imageIndex) "m-image_active"}}">
-{{/each}}
-<h2 class="{{b}}__name">{{activeRecipe.name}}</h2>
+{{#unless showIngredients}}
+	{{#each activeRecipe.image_urls as |url index|}}
+		<img src="{{url}}" class="{{b}}__image {{if (eq index imageIndex) "m-image_active"}}">
+	{{/each}}
+	<h2 class="{{b}}__name">{{activeRecipe.name}}</h2>
+{{else}}
+	{{activeRecipe.name}}
+	<p>Cook Time: {{activeRecipe.cook_time}}</p>
+	<p>Yield: {{activeRecipe.yield}}</p>
+
+	{{#each activeRecipe.ingredients as |ingredient|}}
+		<p>{{ingredient.name}}</p>
+	{{/each}}
+{{/unless}}

@@ -21,7 +21,8 @@
 		<div class="{{b}}__active-recipe">
 			{{recipe-card-swipe
 				activeRecipe=activeRecipe
-				imageIndex=imageIndex		
+				imageIndex=imageIndex
+				showIngredients=showIngredients		
 			}}
 		</div>
 
@@ -31,12 +32,12 @@
 		</div>
 	</div>
 
-	{{#if (not-eq imageIndex lastImage)}}
+	{{#unless showIngredients}}
 		<div class="{{b}}__button-container m-bottom">
 			<button class="g-icon-button">
 				<i class="material-icons m-white m-large" {{action "cycleImage" "down"}}>chevron_left</i>
 			</button>
 		</div>
-	{{/if}}
+	{{/unless}}
 
 </div>

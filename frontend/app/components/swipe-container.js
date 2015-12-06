@@ -11,11 +11,25 @@ export default Ember.Component.extend({
 	activeRecipe: null,
 	imageIndex: null,
 
+
+  /**
+  *
+  */
 	lastImage: function () {
 
 		return this.get("activeRecipe.image_urls.length") - 1;
 
 	}.property("activeRecipe.image_urls"),
+
+
+  /**
+  *
+  */
+  showIngredients: function () {
+
+  	return this.get("imageIndex") === this.get("activeRecipe.image_urls.length")
+
+  }.property("imageIndex", "activeRecipe.image_urls"),
 
 
 	/**
@@ -24,23 +38,23 @@ export default Ember.Component.extend({
 	actions: {
 
     /**
-     *
-     */
+    *
+    */
 		toggleView () {
 			this.sendAction("toggleView");
 		},
 
     /**
-     *
-     */
+    *
+    */
     switchRecipe (direction) {
     	this.sendAction("switchRecipe", direction);
     },
 
 
     /**
-     *
-     */
+    *
+    */
     cycleImage (direction) {
 
     	let imageIndex = this.get("imageIndex");
