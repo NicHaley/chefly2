@@ -20,9 +20,11 @@
 		position: absolute;
 		width: 100%;
 		text-align: center;
+    display: flex;
+    justify-content: center;
 
 		&.m-top {
-			top: -50px;
+			top: -55px;
 
 			.g-icon-button i {
 				transform: rotate(90deg);
@@ -30,8 +32,6 @@
 		}
 
 		&.m-bottom {
-			bottom: -50px;
-
 			.g-icon-button i {
 				transform: rotate(-90deg);
 			}
@@ -84,5 +84,6 @@
 
 	&__filter-button {
 		float: right;
+		padding: 10px;
 	}
 }

@@ -1,5 +1,5 @@
 <button class="{{b}}__filter-button g-icon-button" {{action "toggleView"}}>
-	<i class="material-icons m-white">clear</i>
+	<i class="material-icons m-white m-small">clear</i>
 </button>
 
 <div class="{{b}}__recipes-container">
@@ -7,7 +7,7 @@
 	{{#if (not-eq imageIndex 0)}}
 		<div class="{{b}}__button-container m-top">
 			<button class="g-icon-button">
-				<i class="material-icons m-white" {{action "cycleImage" "up"}}>chevron_left</i>
+				<i class="material-icons m-white m-large" {{action "cycleImage" "up"}}>chevron_left</i>
 			</button>
 		</div>
 	{{/if}}
@@ -34,7 +34,7 @@
 	{{#if (not-eq imageIndex lastImage)}}
 		<div class="{{b}}__button-container m-bottom">
 			<button class="g-icon-button">
-				<i class="material-icons m-white" {{action "cycleImage" "down"}}>chevron_left</i>
+				<i class="material-icons m-white m-large" {{action "cycleImage" "down"}}>chevron_left</i>
 			</button>
 		</div>
 	{{/if}}
