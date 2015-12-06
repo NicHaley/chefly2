@@ -32,6 +32,47 @@ export default Ember.Component.extend({
   }.property("imageIndex", "activeRecipe.image_urls"),
 
 
+  	/**
+	* Focus element on insert so that keyDown is triggered
+	*/
+	didInsertElement: function() {
+    return this.$().attr({ tabindex: 0 }), this.$().focus();
+	},
+
+
+	/**
+	*
+	*/
+	keyDown: function (e) {
+
+		let imageIndex = this.get("imageIndex");
+
+		if (e.keyCode === 37) {
+
+    	this.sendAction("switchRecipe", "previous");
+    	this.set("imageIndex", 0);
+
+		} else if (e.keyCode === 39) {
+
+			this.sendAction("switchRecipe", "next");
+    	this.set("imageIndex", 0);
+
+		} else if (e.keyCode === 38) {
+
+			if (imageIndex > 0) {
+				this.set("imageIndex", imageIndex - 1)
+			}
+
+		} else if (e.keyCode === 40) {
+
+			if (!this.get("showIngredients")) {
+				this.set("imageIndex", imageIndex + 1)
+			}
+
+		}
+	},
+
+
 	/**
 	* Actions
 	*/

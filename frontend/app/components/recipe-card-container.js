@@ -79,41 +79,6 @@ export default Ember.Component.extend({
 
 
 	/**
-	* Focus element on insert so that keyDown is triggered
-	*/
-	// didInsertElement() {
-	//    this.$().attr('tabindex',0);
-	//    this.$().focus();
-	// },
-
-
-	/**
-	*
-	*/
-	keyDown: function (e) {
-
-		if (this.get("gridActive")) {
-			return;
-		}
-
-		// Navigate down recipe stack
-		if (e.keyCode === 40) {
-			this.decrementIndex();
-			this.set("flipped", false);
-
-		// See more card info
-		} else if (e.keyCode === 39 || e.keyCode === 37) {
-			this.toggleProperty("flipped");
-
-		// Navigate up recipe stack
-		} else if (e.keyCode === 38) {
-			this.incrementIndex();
-			this.set("flipped", false);
-		}
-	},
-
-
-	/**
 	* Actions
 	*/
 	actions: {
