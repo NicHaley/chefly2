@@ -21,12 +21,13 @@ end
     cook_time: "#{rand(180)} minutes",
     yield: "#{rand(6)} servings",
     ingredient_lines: [],
-    image_urls: [
-      Faker::Avatar.image, 
-      Faker::Avatar.image,
-      Faker::Avatar.image
-    ],
+    image_urls: [],
   )
+  rand(5).times do
+    recipe.image_urls << Faker::Avatar.image
+    recipe.save
+  end
+
   4.times do
     offset = rand(Ingredient.count)
     recipe.ingredients << Ingredient.offset(offset).first
