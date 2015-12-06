@@ -1,4 +1,4 @@
 {{#each activeRecipe.image_urls as |url index|}}
 	<img src="{{url}}" class="{{b}}__image {{if (eq index imageIndex) "m-image_active"}}">
 {{/each}}
-{{activeRecipe.name}}
+<h2 class="{{b}}__name">{{activeRecipe.name}}</h2>

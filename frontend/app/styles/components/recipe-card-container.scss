@@ -12,17 +12,5 @@
 
 	&__filter-controls {
 		text-align: right;
-
-		&__button {
-	    background: none;
-	    outline: none;
-	    border: none;
-	    line-height: 0;
-
-	    &__icon {
-	    	font-size: 30px;
-	    	color: $main-colour;
-	    }
-		}
 	}
 }

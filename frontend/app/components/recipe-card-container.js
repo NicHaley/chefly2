@@ -46,8 +46,6 @@ export default Ember.Component.extend({
 
 		let previousIndex = this.previousIndex(this.get("recipeIndex"), this.get("recipesLength"));
 
-		console.log("324234234", previousIndex);
-
 		return this.get("recipes").objectAt(previousIndex);
 
 	}.property("recipeIndex", "recipesLength"),

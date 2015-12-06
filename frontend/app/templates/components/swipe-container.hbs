@@ -1,10 +1,11 @@
-<button class="{{b}}__filter-controls__button" {{action "toggleView"}}>
-	<i class="material-icons {{b}}__filter-controls__button__icon">view_module</i>
+<button class="{{b}}__filter-button g-icon-button" {{action "toggleView"}}>
+	<i class="material-icons m-white">clear</i>
 </button>
 
 <div class="{{b}}__recipes">
-	<div class="{{b}}__switch-recipe">
-		<img src="{{previousRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" {{action "switchRecipe" "previous"}}>
+	<div class="{{b}}__switch-recipe" {{action "switchRecipe" "previous"}}>
+		<div class="{{b}}__switch-recipe__mask"></div>
+		<img src="{{previousRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" >
 	</div>
 
 	<div class="{{b}}__active-recipe">
@@ -14,7 +15,8 @@
 		}}
 	</div>
 
-	<div class="{{b}}__switch-recipe">
-		<img src="{{nextRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" {{action "switchRecipe" "next"}}>
+	<div class="{{b}}__switch-recipe" {{action "switchRecipe" "next"}}>
+		<div class="{{b}}__switch-recipe__mask"></div>	
+		<img src="{{nextRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" >
 	</div>
 </div>

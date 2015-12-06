@@ -25,14 +25,30 @@
 	}
 
 	&__switch-recipe {
+		position: relative;
 		height: 100%;
 		width: 150px;
 		background-color: white;
+		cursor: pointer;
 
 		&__image {
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
 		}
+
+		&__mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0,0,0,0.6);
+			z-index: 1;
+		}
+	}
+
+	&__filter-button {
+		float: right;
 	}
 }
