@@ -49,6 +49,7 @@ export default Ember.Component.extend({
     */
     switchRecipe (direction) {
     	this.sendAction("switchRecipe", direction);
+    	this.set("imageIndex", 0);
     },
 
 
