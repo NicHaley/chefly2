@@ -23,7 +23,7 @@ end
     ingredient_lines: [],
     image_urls: [],
   )
-  rand(5).times do
+  rand(1..5).times do
     recipe.image_urls << Faker::Avatar.image
     recipe.save
   end
