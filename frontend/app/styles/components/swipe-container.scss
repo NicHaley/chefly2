@@ -7,21 +7,55 @@
 	background-color: rgba(0,0,0,0.9);
 	z-index: 1;
 
-	&__recipes {
+	&__recipes-container {
+		height: 400px;
+		width: 100%;
 		position: absolute;
 		top: 50%;
 		left: 0;
 		transform: translateY(-50%);
+	}
+
+	&__button-container {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+
+		&.m-top {
+			top: -50px;
+
+			.g-icon-button i {
+				transform: rotate(90deg);
+			}
+		}
+
+		&.m-bottom {
+			bottom: -50px;
+
+			.g-icon-button i {
+				transform: rotate(-90deg);
+			}
+		}
+	}
+
+	&__recipes {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
-		height: 400px;
+		height: 100%;
 		width: 100%;
 	}
 
 	&__active-recipe {
+		position: relative;
 		height: 100%;
 		width: 600px;
 		background-color: white;
+
+		&__image-switch {
+			position: absolute;
+			top: -50px;
+		}
 	}
 
 	&__switch-recipe {
