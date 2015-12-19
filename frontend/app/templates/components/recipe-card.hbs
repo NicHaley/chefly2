@@ -9,12 +9,17 @@
 <div class="{{b}}__instructions" {{action "setModalRecipe" recipeIndex recipe.image_urls.length}}>
 	<h3 class="{{b}}__instructions__title">{{recipe.name}}</h3>
 
-	<p>Cook Time: {{recipe.cook_time}}</p>
-	<p>Yield: {{recipe.yield}}</p>
+	<h4 class="{{b}}__instructions__info">
+		<i class="material-icons">timelapse</i> {{recipe.cook_time}}
+	</h4>
+	<h4 class="{{b}}__instructions__info"><i class="material-icons">people</i> Serves {{recipe.yield}}</h4>
 
-	{{#each recipe.ingredients as |ingredient|}}
-		<p>{{ingredient.name}}</p>
-	{{/each}}
+	<h4 class="{{b}}__instructions__info m-ingredients"><i class="material-icons">local_dining</i> Ingredients</h4>
+	<ul class="{{b}}__instructions__ingredients">
+		{{#each recipe.ingredients as |ingredient|}}
+			<li>{{ingredient.name}}</li>
+		{{/each}}
+	</ul>
 </div>
 
 
