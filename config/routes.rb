@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :recipes, only: [:index, :show]
   resources :blogs, only: [:index, :show]
+  mount_ember_app :frontend, to: "/"
 
   get '/get_more_recipes', to: 'recipes#get_more_recipes'
   get '/recipes_query', to: 'recipes#recipes_query' 
