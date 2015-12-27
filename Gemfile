@@ -8,6 +8,7 @@ gem 'spring', :group => :development
 gem 'ember-cli-rails'
 gem 'mechanize'
 gem 'active_model_serializers', '~> 0.8.1'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
 
