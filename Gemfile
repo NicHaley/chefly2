@@ -5,7 +5,7 @@ gem 'rails', '4.2.4'
 gem 'rails-api'
 gem 'ransack'
 gem 'spring', :group => :development
-gem 'ember-cli-rails'
+gem 'ember-cli-rails', '~>0.7.0'
 gem 'mechanize'
 gem 'active_model_serializers', '~> 0.8.1'
 gem 'rails_12factor', group: :production
@@ -22,3 +22,4 @@ group :development, :test do
 end
 
 ruby "2.2.2"
+gem 'rails_12factor', group: [:staging, :production]
