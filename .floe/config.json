@@ -1,0 +1,51 @@
+{
+  "$schema": "https://unpkg.com/@floe/config@1.0.0-alpha.14/schema.json",
+  "sections": [
+    {
+      "title": "Frontend",
+      "pages": [
+        {
+          "title": "README",
+          "pageView": {
+            "path": "frontend/README"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Docs",
+      "pages": [
+        {
+          "title": "Index",
+          "pageView": {
+            "path": "docs/index"
+          }
+        },
+        {
+          "title": "Getting-started",
+          "pageView": {
+            "path": "docs/getting-started"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Changelog",
+      "pages": [
+        {
+          "title": "Sample",
+          "pageView": {
+            "path": "changelog/sample"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Getting-started",
+      "dataView": {
+        "path": "docs/getting-started",
+        "direction": "dsc"
+      }
+    }
+  ]
+}
